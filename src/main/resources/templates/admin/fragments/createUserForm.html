@@ -1,0 +1,54 @@
+<div id="createUserForm" th:fragment="createUserFormFragment">
+    <section class="p-3 bg-white">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-7">
+                    <form id="addUserForm" th:action="@{/admin/create}" method="post" th:object="${user}">
+
+<!--                        -->
+                        <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+<!---->
+                        <div class="row justify-content-center">
+                            <div class="form-group" style="text-align: center;">
+                                <label for="editName">Name</label>
+                                <input type="text" th:name="name"
+                                       id="editName"
+                                       class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="form-group" style="text-align: center;">
+                                <label for="editEmail">Email</label>
+                                <input type="text" th:name="email"
+                                       id="editEmail"
+                                       class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="form-group" style="text-align: center;">
+                                <label for="editPassword">Password</label>
+                                <input type="password" th:name="password"
+                                       id="editPassword" class="form-control"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="form-group" style="text-align: center;">
+                                <br>
+                                <label for="roles">Roles:</label>
+                                <select multiple name="roleIds" id="roles">
+                                    <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.name}"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="form-group" style="text-align: center;">
+                                <button type="submit">Create user</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

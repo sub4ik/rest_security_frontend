@@ -1,0 +1,12 @@
+<div id="mainHeader" th:fragment="mainHeaderFragment" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <header class="bg-dark p-3 text-white d-flex justify-content-between">
+        <div>
+            <span sec:authentication="name">User </span>
+            <span> with roles:</span>
+            <span sec:authentication="principal.authorities">roles</span>
+        </div>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn text-white-50">logout</button>
+        </form>
+    </header>
+</div>

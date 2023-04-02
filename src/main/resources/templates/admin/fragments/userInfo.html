@@ -1,0 +1,23 @@
+<div id="userInfo" th:fragment="userInfoFragment">
+    <h4>User info</h4>
+    <table class="table table-striped" >
+        <thead class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Roles</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${#authentication.principal}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td>
+                <a th:each="role : ${user.roles}" th:text="${role.name} + ' '"> </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

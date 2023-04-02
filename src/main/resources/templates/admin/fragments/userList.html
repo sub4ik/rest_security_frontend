@@ -1,0 +1,39 @@
+<div id="userList" th:fragment="userListFragment">
+  <h4>All users</h4>
+  <table class="table table-striped">
+    <thead class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Roles</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody id="usersTableBody">
+    <!--<tr th:each="user : ${users}">
+      <td th:text="${user.id}"></td>
+      <td th:text="${user.name}"></td>
+      <td th:text="${user.email}"></td>
+      <td>
+        <a th:each="role : ${user.roles}" th:text="${role.name} + ' '"> </a>
+      </td>
+      <td>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                th:data-bs-target="'#editUser' + ${user.id}">
+          edit
+        </button>
+        <div th:replace="admin/fragments/editUserForm :: editUserFormFragment" th:with="user=${user}, roles=${roles}"></div>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                th:data-bs-target="'#userDelete' + ${user.id}">
+          delete
+        </button>
+        <div th:replace="admin/fragments/userDeleteForm :: userDeleteFormFragment" th:with="user=${user}"></div>
+      </td>
+    </tr>-->
+    </tbody>
+  </table>
+</div>
